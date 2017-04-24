@@ -7,7 +7,7 @@ using System.IO;
 
 namespace Surge
 {
-    enum BencodingType
+    public enum BencodingType
     {
         Dictionary,
         List,
@@ -15,12 +15,12 @@ namespace Surge
         String
     }
 
-    internal class BencodingException : Exception
+    public class BencodingException : Exception
     {
         public BencodingException(string message) : base(message) {}
     }
 
-    abstract internal class BencodedData
+    abstract public class BencodedData
     {
         public abstract BencodingType Type { get; }
 
@@ -70,7 +70,7 @@ namespace Surge
         }
     }
 
-    internal class BencodedString : BencodedData
+    public class BencodedString : BencodedData
     {
         public override BencodingType Type
         {
@@ -106,7 +106,7 @@ namespace Surge
         byte[] _data;
     }
 
-    internal class BencodedInteger : BencodedData
+    public class BencodedInteger : BencodedData
     {
         public override BencodingType Type
         {
@@ -134,7 +134,7 @@ namespace Surge
         long _data;
     }
 
-    class BencodedList : BencodedData
+    public class BencodedList : BencodedData
     {
         public override BencodingType Type
         {
@@ -169,7 +169,7 @@ namespace Surge
         List<BencodedData> _data;
     }
 
-    class BencodedDictionary : BencodedData
+    public class BencodedDictionary : BencodedData
     {
         public override BencodingType Type
         {
@@ -205,7 +205,7 @@ namespace Surge
         Dictionary<string, BencodedData> _data;
     }
 
-    internal class Bencoding
+    public class Bencoding
     {
         List<BencodedData> _tokens;
 

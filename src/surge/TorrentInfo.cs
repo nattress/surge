@@ -64,5 +64,13 @@ namespace Surge
             AnnounceList = new List<Uri>();
             FileInformation = new FileInfoCollection();
         }
+
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            //sb.Append()
+            return "";
+        }
     }
 }
