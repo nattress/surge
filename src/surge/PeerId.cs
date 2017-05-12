@@ -31,7 +31,7 @@ namespace Surge
 
                     for (int i = 0; i < numberOfRandomCharactersNeeded; i++)
                     {
-                        sb.Append(random.Next(RandomCharacterSource.Length));
+                        sb.Append(RandomCharacterSource.Substring(random.Next(RandomCharacterSource.Length), 1));
                     }
 
                     s_peerId = sb.ToString();
