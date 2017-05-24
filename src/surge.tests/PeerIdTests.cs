@@ -14,5 +14,15 @@ namespace SurgeTests
         {
             Assert.True(PeerId.Id.Length == 20);
         }
+
+        [Fact]
+        public void PeerIdStability()
+        {
+            // PeerId.Id should be the same for a session
+            var id1 = PeerId.Id;
+            var id2 = PeerId.Id;
+
+            Assert.True(id1 == id2);
+        }
     }
 }
